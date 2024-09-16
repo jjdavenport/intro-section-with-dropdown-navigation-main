@@ -13,29 +13,37 @@ import arrowDown from "./assets/icon-arrow-down.svg";
 
 const Nav = ({ desktop }) => {
   const [menu, setMenu] = useState(false);
+  const [feautures, setFeatures] = useState(false);
+  const [company, setCompany] = useState(false);
+
+  const toggle = () => setMenu(!menu);
 
   return (
     <>
       {desktop ? (
         <>
-          <nav>
-            <img src={logo} alt="Logo" />
-            <ul>
-              <li>
-                <button onClick={() => setMenu(true)}>
-                  Features <img src={menu ? arrowUp : arrowDown} />
-                </button>
-              </li>
-              <li>
-                <button onClick={() => setMenu(true)}>
-                  Company <img src={menu ? arrowUp : arrowDown} />
-                </button>
-              </li>
-              <li>Careers</li>
-              <li>About</li>
-            </ul>
-            <button>Login</button>
-            <button>Sign Up</button>
+          <nav className="flex justify-between">
+            <div className="flex">
+              <img src={logo} alt="Logo" />
+              <ul className="flex">
+                <li>
+                  <button onClick={toggle}>
+                    Features <img src={menu ? arrowUp : arrowDown} />
+                  </button>
+                </li>
+                <li>
+                  <button onClick={toggle}>
+                    Company <img src={menu ? arrowUp : arrowDown} />
+                  </button>
+                </li>
+                <li>Careers</li>
+                <li>About</li>
+              </ul>
+            </div>
+            <div>
+              <button>Login</button>
+              <button>Sign Up</button>
+            </div>
           </nav>
           {menu && (
             <>
@@ -51,7 +59,7 @@ const Nav = ({ desktop }) => {
         </>
       ) : (
         <>
-          <nav>
+          <nav className="flex justify-between">
             <img src={logo} alt="Logo" />
             <button onClick={() => setMenu(!menu)}>
               <img src={menuIcon} alt="Menu Icon" />

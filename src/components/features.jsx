@@ -1,7 +1,7 @@
 const Features = ({ todo, calendar, reminders, planning }) => {
   return (
     <>
-      <dialog>
+      <dialog className="flex">
         <ul>
           <li>
             Todo List

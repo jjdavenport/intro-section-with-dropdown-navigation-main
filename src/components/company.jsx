@@ -1,7 +1,7 @@
 const Company = () => {
   return (
     <>
-      <dialog>
+      <dialog className="flex">
         <ul>
           <li>History</li>
           <li>Our Team</li>
