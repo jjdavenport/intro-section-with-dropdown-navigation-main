@@ -1,4 +1,4 @@
-import close from "./assets/icon-close-menu.svg";
+import closeIcon from "./assets/icon-close-menu.svg";
 
 const MobileMenu = ({
   todo,
@@ -8,12 +8,13 @@ const MobileMenu = ({
   arrowUp,
   arrowDown,
   menu,
+  close,
 }) => {
   return (
     <>
-      <dialog>
-        <button>
-          <img src={close} />
+      <dialog className="flex">
+        <button onClick={close}>
+          <img src={closeIcon} />
         </button>
         <ul>
           <li>

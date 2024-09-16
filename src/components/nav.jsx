@@ -61,7 +61,7 @@ const Nav = ({ desktop }) => {
         <>
           <nav className="flex justify-between">
             <img src={logo} alt="Logo" />
-            <button onClick={() => setMenu(!menu)}>
+            <button onClick={() => setMenu(true)}>
               <img src={menuIcon} alt="Menu Icon" />
             </button>
           </nav>
@@ -72,6 +72,7 @@ const Nav = ({ desktop }) => {
               reminders={reminders}
               planning={planning}
               menu={menu}
+              close={toggle}
             />
           )}
         </>
