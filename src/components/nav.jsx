@@ -1,6 +1,6 @@
 import logo from "./assets/logo.svg";
 import menuIcon from "./assets/icon-menu.svg";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MobileMenu from "./mobile-menu";
 import Features from "./features";
 import Company from "./company";
@@ -13,31 +13,54 @@ import arrowDown from "./assets/icon-arrow-down.svg";
 
 const Nav = ({ desktop }) => {
   const [menu, setMenu] = useState(false);
-  const [feautures, setFeatures] = useState(false);
+  const [features, setFeatures] = useState(false);
   const [company, setCompany] = useState(false);
 
   const toggle = () => setMenu(!menu);
+
+  const featuresRef = useRef(null);
+  const companyRef = useRef(null);
+
+  const timeOutEnter = (i, r) => {
+    clearTimeout(r.current);
+    r.current = setTimeout(() => i(true), 0);
+  };
+
+  const timeOutLeave = (i, r) => {
+    clearTimeout(r.current);
+    r.current = setTimeout(() => i(false), 300);
+  };
 
   return (
     <>
       {desktop ? (
         <>
-          <nav className="flex justify-between">
+          <nav className="flex justify-between p-4">
             <div className="flex">
-              <img src={logo} alt="Logo" />
+              <img className="object-contain" src={logo} alt="Logo" />
               <ul className="flex">
                 <li>
-                  <button onClick={toggle}>
-                    Features <img src={menu ? arrowUp : arrowDown} />
+                  <button
+                    onMouseEnter={() => timeOutEnter(setFeatures, featuresRef)}
+                    onMouseLeave={() => timeOutLeave(setFeatures, featuresRef)}
+                  >
+                    Features <img src={features ? arrowUp : arrowDown} />
                   </button>
                 </li>
                 <li>
-                  <button onClick={toggle}>
-                    Company <img src={menu ? arrowUp : arrowDown} />
+                  <button
+                    onMouseEnter={() => timeOutEnter(setCompany, companyRef)}
+                    onMouseLeave={() => timeOutLeave(setCompany, companyRef)}
+                  >
+                    Company <img src={company ? arrowUp : arrowDown} />
                   </button>
                 </li>
-                <li>Careers</li>
-                <li>About</li>
+                <li>
+                  <a href="#">Careers</a>
+                </li>
+                <li>
+                  <a href="#">About</a>
+                </li>
               </ul>
             </div>
             <div>
@@ -45,10 +68,11 @@ const Nav = ({ desktop }) => {
               <button>Sign Up</button>
             </div>
           </nav>
-          {menu && (
+          {features && (
             <>
-              <Company />
               <Features
+                enter={() => timeOutEnter(setFeatures, featuresRef)}
+                leave={() => timeOutLeave(setFeatures, featuresRef)}
                 todo={todo}
                 calendar={calendar}
                 reminders={reminders}
@@ -56,10 +80,16 @@ const Nav = ({ desktop }) => {
               />
             </>
           )}
+          {company && (
+            <Company
+              enter={() => timeOutEnter(setCompany, companyRef)}
+              leave={() => timeOutLeave(setCompany, companyRef)}
+            />
+          )}
         </>
       ) : (
         <>
-          <nav className="flex justify-between">
+          <nav className="flex justify-between p-4">
             <img src={logo} alt="Logo" />
             <button onClick={() => setMenu(true)}>
               <img src={menuIcon} alt="Menu Icon" />

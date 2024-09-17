@@ -11,8 +11,8 @@ function App() {
   const desktop = useMediaQuery({ minWidth: 768 });
   return (
     <>
-      <div className="font-custom">
-        <div className="text-lg">
+      <div className="bg-almostWhite font-custom">
+        <div className="relative text-lg">
           <Nav desktop={desktop} />
           <Hero hero={desktop ? dekstopHero : mobileHero} />
           <Content />

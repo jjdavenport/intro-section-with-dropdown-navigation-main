@@ -1,23 +1,32 @@
-const Features = ({ todo, calendar, reminders, planning }) => {
+const Features = ({ todo, calendar, reminders, planning, enter, leave }) => {
   return (
     <>
-      <dialog className="flex">
+      <dialog
+        onMouseEnter={enter}
+        onMouseLeave={leave}
+        className="absolute left-20 m-0 flex"
+      >
         <ul>
           <li>
-            Todo List
-            <img src={todo} />
+            <a href="#">
+              Todo List <img src={todo} />
+            </a>
           </li>
           <li>
-            Calendar
-            <img src={calendar} />
+            <a href="#">
+              Calendar
+              <img src={calendar} />
+            </a>
           </li>
           <li>
-            Reminders
-            <img src={reminders} />
+            <a href="#">
+              Reminders <img src={reminders} />
+            </a>
           </li>
           <li>
-            Planning
-            <img src={planning} />
+            <a href="#">
+              Planning <img src={planning} />
+            </a>
           </li>
         </ul>
       </dialog>

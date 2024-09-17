@@ -1,11 +1,21 @@
-const Company = () => {
+const Company = ({ leave, enter }) => {
   return (
     <>
-      <dialog className="flex">
+      <dialog
+        onMouseEnter={enter}
+        onMouseLeave={leave}
+        className="absolute left-40 m-0 flex"
+      >
         <ul>
-          <li>History</li>
-          <li>Our Team</li>
-          <li>Blog</li>
+          <li>
+            <a href="#">History</a>
+          </li>
+          <li>
+            <a href="#">Our Team</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
         </ul>
       </dialog>
     </>
