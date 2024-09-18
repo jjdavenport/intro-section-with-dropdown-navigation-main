@@ -1,4 +1,4 @@
-import { useDebugValue, useState } from "react";
+import { useState } from "react";
 import closeIcon from "./assets/icon-close-menu.svg";
 
 const MobileMenu = ({
@@ -17,16 +17,16 @@ const MobileMenu = ({
   return (
     <>
       <aside
-        className={`right absolute right-0 top-0 z-10 m-0 flex h-full w-4/6 transform flex-col bg-almostWhite p-4 transition duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"} `}
+        className={`fixed right-0 top-0 z-10 flex h-full w-4/6 flex-col gap-4 bg-almostWhite p-4 transition-transform duration-300 ease-in-out ${menuOpen}`}
       >
         <button onClick={close} className="flex justify-end">
           <img src={closeIcon} />
         </button>
-        <ul>
+        <ul className="flex flex-col gap-4">
           <li>
             <details>
               <summary
-                className="flex cursor-pointer"
+                className="flex cursor-pointer gap-2"
                 onClick={() => setExpandedFeatures(!expandedFeatures)}
               >
                 Features
@@ -35,29 +35,29 @@ const MobileMenu = ({
                   src={expandedFeatures ? arrowUp : arrowDown}
                 />
               </summary>
-              <ul>
+              <ul className="flex flex-col gap-4 p-4">
                 <li>
-                  <a href="#">
+                  <a className="flex gap-2" href="#">
+                    <img className="object-contain" src={todo} />
                     Todo List
-                    <img src={todo} />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a className="flex gap-2" href="#">
+                    <img className="object-contain" src={calendar} />
                     Calendar
-                    <img src={calendar} />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a className="flex gap-2" href="#">
+                    <img className="object-contain" src={reminders} />
                     Reminders
-                    <img src={reminders} />
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a className="flex gap-2" href="#">
+                    <img className="object-contain" src={planning} />
                     Planning
-                    <img src={planning} />
                   </a>
                 </li>
               </ul>
@@ -66,7 +66,7 @@ const MobileMenu = ({
           <li>
             <details>
               <summary
-                className="flex cursor-pointer"
+                className="flex cursor-pointer gap-2"
                 onClick={() => setExpandedCompany(!expandedCompany)}
               >
                 Company
@@ -75,7 +75,7 @@ const MobileMenu = ({
                   src={expandedCompany ? arrowUp : arrowDown}
                 />
               </summary>
-              <ul>
+              <ul className="flex flex-col gap-4 p-4">
                 <li>
                   <a href="#">History</a>
                 </li>

@@ -11,15 +11,24 @@ function App() {
   const desktop = useMediaQuery({ minWidth: 768 });
   return (
     <>
-      <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom">
-        <div className="relative flex flex-1 flex-col text-lg">
+      {desktop ? (
+        <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom">
+          <div className="relative flex flex-1 flex-col text-lg">
+            <Nav desktop={desktop} />
+            <Hero hero={dekstopHero} />
+            <Content />
+            <Carousel />
+          </div>
+          <Footer />
+        </div>
+      ) : (
+        <div className="flex h-full min-h-screen flex-1 flex-col bg-almostWhite font-custom text-lg">
           <Nav desktop={desktop} />
-          <Hero hero={desktop ? dekstopHero : mobileHero} />
+          <Hero hero={mobileHero} />
           <Content />
           <Carousel />
         </div>
-        <Footer />
-      </div>
+      )}
     </>
   );
 }

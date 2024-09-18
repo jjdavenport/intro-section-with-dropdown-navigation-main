@@ -46,7 +46,7 @@ const Nav = ({ desktop }) => {
                     onMouseEnter={() => timeOutEnter(setFeatures, featuresRef)}
                     onMouseLeave={() => timeOutLeave(setFeatures, featuresRef)}
                   >
-                    Features{" "}
+                    Features
                     <img
                       className="object-contain"
                       src={features ? arrowUp : arrowDown}
@@ -60,7 +60,7 @@ const Nav = ({ desktop }) => {
                     onMouseEnter={() => timeOutEnter(setCompany, companyRef)}
                     onMouseLeave={() => timeOutLeave(setCompany, companyRef)}
                   >
-                    Company{" "}
+                    Company
                     <img
                       className="object-contain"
                       src={company ? arrowUp : arrowDown}
@@ -108,17 +108,21 @@ const Nav = ({ desktop }) => {
             </button>
           </nav>
           {menu && (
-            <MobileMenu
-              todo={todo}
-              calendar={calendar}
-              reminders={reminders}
-              planning={planning}
-              close={toggle}
-              arrowUp={arrowUp}
-              arrowDown={arrowDown}
-              menuOpen={menu}
-            />
+            <div
+              className="z-5 fixed inset-0 bg-black opacity-50"
+              onClick={toggle}
+            ></div>
           )}
+          <MobileMenu
+            todo={todo}
+            calendar={calendar}
+            reminders={reminders}
+            planning={planning}
+            close={toggle}
+            arrowUp={arrowUp}
+            arrowDown={arrowDown}
+            menuOpen={menu ? "translate-x-0" : "translate-x-full"}
+          />
         </>
       )}
     </>
