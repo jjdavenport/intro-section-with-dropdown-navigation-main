@@ -1,3 +1,4 @@
+import { useDebugValue, useState } from "react";
 import closeIcon from "./assets/icon-close-menu.svg";
 
 const MobileMenu = ({
@@ -7,20 +8,32 @@ const MobileMenu = ({
   planning,
   arrowUp,
   arrowDown,
-  menu,
   close,
+  menuOpen,
 }) => {
+  const [expandedFeatures, setExpandedFeatures] = useState(false);
+  const [expandedCompany, setExpandedCompany] = useState(false);
+
   return (
     <>
-      <aside className="right absolute right-0 top-0 m-0 flex flex-col p-4">
+      <aside
+        className={`right absolute right-0 top-0 z-10 m-0 flex h-full w-4/6 transform flex-col bg-almostWhite p-4 transition duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"} `}
+      >
         <button onClick={close} className="flex justify-end">
           <img src={closeIcon} />
         </button>
         <ul>
           <li>
             <details>
-              <summary>
-                Features <img src={menu ? arrowUp : arrowDown} />
+              <summary
+                className="flex cursor-pointer"
+                onClick={() => setExpandedFeatures(!expandedFeatures)}
+              >
+                Features
+                <img
+                  className="object-contain"
+                  src={expandedFeatures ? arrowUp : arrowDown}
+                />
               </summary>
               <ul>
                 <li>
@@ -52,9 +65,15 @@ const MobileMenu = ({
           </li>
           <li>
             <details>
-              <summary>
+              <summary
+                className="flex cursor-pointer"
+                onClick={() => setExpandedCompany(!expandedCompany)}
+              >
                 Company
-                <img src={menu ? arrowUp : arrowDown} />
+                <img
+                  className="object-contain"
+                  src={expandedCompany ? arrowUp : arrowDown}
+                />
               </summary>
               <ul>
                 <li>

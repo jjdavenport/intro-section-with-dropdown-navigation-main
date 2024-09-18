@@ -36,24 +36,36 @@ const Nav = ({ desktop }) => {
       {desktop ? (
         <>
           <nav className="flex justify-between p-4">
-            <div className="flex">
+            <div className="flex gap-2">
               <img className="object-contain" src={logo} alt="Logo" />
-              <ul className="flex">
+              <ul className="flex gap-2">
                 <li>
-                  <button
+                  <a
+                    href="#"
+                    className="flex"
                     onMouseEnter={() => timeOutEnter(setFeatures, featuresRef)}
                     onMouseLeave={() => timeOutLeave(setFeatures, featuresRef)}
                   >
-                    Features <img src={features ? arrowUp : arrowDown} />
-                  </button>
+                    Features{" "}
+                    <img
+                      className="object-contain"
+                      src={features ? arrowUp : arrowDown}
+                    />
+                  </a>
                 </li>
                 <li>
-                  <button
+                  <a
+                    href="#"
+                    className="flex"
                     onMouseEnter={() => timeOutEnter(setCompany, companyRef)}
                     onMouseLeave={() => timeOutLeave(setCompany, companyRef)}
                   >
-                    Company <img src={company ? arrowUp : arrowDown} />
-                  </button>
+                    Company{" "}
+                    <img
+                      className="object-contain"
+                      src={company ? arrowUp : arrowDown}
+                    />
+                  </a>
                 </li>
                 <li>
                   <a href="#">Careers</a>
@@ -63,7 +75,7 @@ const Nav = ({ desktop }) => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="flex gap-2">
               <button>Login</button>
               <button>Sign Up</button>
             </div>
@@ -101,8 +113,10 @@ const Nav = ({ desktop }) => {
               calendar={calendar}
               reminders={reminders}
               planning={planning}
-              menu={menu}
               close={toggle}
+              arrowUp={arrowUp}
+              arrowDown={arrowDown}
+              menuOpen={menu}
             />
           )}
         </>
