@@ -23,16 +23,16 @@ const Carousel = () => {
   return (
     <div className="carousel-container">
       <Slider {...settings}>
-        <div>
+        <div className="px-4">
           <img src={data} alt="Databiz" />
         </div>
-        <div>
+        <div className="px-4">
           <img src={audio} alt="Audiophile" />
         </div>
-        <div>
+        <div className="px-4">
           <img src={meet} alt="Meet" />
         </div>
-        <div>
+        <div className="px-4">
           <img src={maker} alt="Maker" />
         </div>
       </Slider>

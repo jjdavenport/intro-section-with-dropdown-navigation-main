@@ -17,7 +17,7 @@ const MobileMenu = ({
   return (
     <>
       <aside
-        className={`fixed right-0 top-0 z-10 flex h-full w-4/6 flex-col gap-4 bg-almostWhite p-4 transition-transform duration-300 ease-in-out ${menuOpen}`}
+        className={`fixed right-0 top-0 z-10 flex h-full w-4/6 flex-col gap-6 bg-almostWhite p-4 transition-transform duration-300 ease-in-out ${menuOpen}`}
       >
         <button onClick={close} className="flex justify-end">
           <img src={closeIcon} />
@@ -26,7 +26,7 @@ const MobileMenu = ({
           <li>
             <details>
               <summary
-                className="flex cursor-pointer gap-2"
+                className="flex cursor-pointer gap-4"
                 onClick={() => setExpandedFeatures(!expandedFeatures)}
               >
                 Features
@@ -66,7 +66,7 @@ const MobileMenu = ({
           <li>
             <details>
               <summary
-                className="flex cursor-pointer gap-2"
+                className="flex cursor-pointer gap-4"
                 onClick={() => setExpandedCompany(!expandedCompany)}
               >
                 Company
@@ -95,8 +95,12 @@ const MobileMenu = ({
             <a href="#">About</a>
           </li>
         </ul>
-        <button>Login</button>
-        <button>Register</button>
+        <div className="flex flex-col gap-2">
+          <button>Login</button>
+          <button className="rounded-xl p-1 outline outline-1 outline-almostBlack">
+            Register
+          </button>
+        </div>
       </aside>
     </>
   );
