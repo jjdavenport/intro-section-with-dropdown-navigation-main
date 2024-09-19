@@ -35,14 +35,14 @@ const Nav = ({ desktop }) => {
     <>
       {desktop ? (
         <>
-          <nav className="flex justify-between p-4">
-            <div className="flex gap-2">
+          <nav className="flex items-center justify-between p-6">
+            <div className="flex gap-8">
               <img className="object-contain" src={logo} alt="Logo" />
-              <ul className="flex gap-2">
+              <ul className="flex gap-8">
                 <li>
                   <a
                     href="#"
-                    className="flex"
+                    className={`flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack ${features ? "text-almostBlack" : "text-mediumGray"}`}
                     onMouseEnter={() => timeOutEnter(setFeatures, featuresRef)}
                     onMouseLeave={() => timeOutLeave(setFeatures, featuresRef)}
                   >
@@ -56,7 +56,7 @@ const Nav = ({ desktop }) => {
                 <li>
                   <a
                     href="#"
-                    className="flex"
+                    className={`flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack ${company ? "text-almostBlack" : "text-mediumGray"}`}
                     onMouseEnter={() => timeOutEnter(setCompany, companyRef)}
                     onMouseLeave={() => timeOutLeave(setCompany, companyRef)}
                   >
@@ -68,16 +68,30 @@ const Nav = ({ desktop }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">Careers</a>
+                  <a
+                    className="transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
+                    Careers
+                  </a>
                 </li>
                 <li>
-                  <a href="#">About</a>
+                  <a
+                    className="transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
+                    About
+                  </a>
                 </li>
               </ul>
             </div>
-            <div className="flex gap-2">
-              <button>Login</button>
-              <button>Sign Up</button>
+            <div className="flex gap-8">
+              <button className="transition duration-300 ease-in-out hover:text-almostBlack">
+                Login
+              </button>
+              <button className="rounded-lg px-4 py-1 outline outline-mediumGray transition duration-300 ease-in-out hover:text-almostBlack hover:outline-almostBlack">
+                Register
+              </button>
             </div>
           </nav>
           {features && (

@@ -12,17 +12,21 @@ function App() {
   return (
     <>
       {desktop ? (
-        <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom">
+        <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom font-medium text-mediumGray">
           <div className="relative flex flex-1 flex-col text-lg">
             <Nav desktop={desktop} />
-            <Hero hero={desktopHero} />
-            <Content />
-            <Carousel />
+            <main className="flex h-full flex-row-reverse p-4">
+              <Hero hero={desktopHero} />
+              <section className="flex w-1/2 flex-col justify-between">
+                <Content />
+                <Carousel />
+              </section>
+            </main>
           </div>
           <Footer />
         </div>
       ) : (
-        <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom text-lg">
+        <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom text-lg font-medium text-mediumGray">
           <Nav desktop={desktop} />
           <main className="flex flex-1 flex-col justify-evenly">
             <Hero hero={mobileHero} />

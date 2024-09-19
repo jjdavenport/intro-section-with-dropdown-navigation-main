@@ -26,7 +26,7 @@ const MobileMenu = ({
           <li>
             <details>
               <summary
-                className="flex cursor-pointer gap-4"
+                className="flex cursor-pointer gap-4 transition duration-300 ease-in-out hover:text-almostBlack"
                 onClick={() => setExpandedFeatures(!expandedFeatures)}
               >
                 Features
@@ -37,25 +37,37 @@ const MobileMenu = ({
               </summary>
               <ul className="flex flex-col gap-4 p-4">
                 <li>
-                  <a className="flex gap-2" href="#">
+                  <a
+                    className="flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
                     <img className="object-contain" src={todo} />
                     Todo List
                   </a>
                 </li>
                 <li>
-                  <a className="flex gap-2" href="#">
+                  <a
+                    className="flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
                     <img className="object-contain" src={calendar} />
                     Calendar
                   </a>
                 </li>
                 <li>
-                  <a className="flex gap-2" href="#">
+                  <a
+                    className="flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
                     <img className="object-contain" src={reminders} />
                     Reminders
                   </a>
                 </li>
                 <li>
-                  <a className="flex gap-2" href="#">
+                  <a
+                    className="flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
                     <img className="object-contain" src={planning} />
                     Planning
                   </a>
@@ -66,7 +78,7 @@ const MobileMenu = ({
           <li>
             <details>
               <summary
-                className="flex cursor-pointer gap-4"
+                className="flex cursor-pointer gap-4 transition duration-300 ease-in-out hover:text-almostBlack"
                 onClick={() => setExpandedCompany(!expandedCompany)}
               >
                 Company
@@ -77,27 +89,54 @@ const MobileMenu = ({
               </summary>
               <ul className="flex flex-col gap-4 p-4">
                 <li>
-                  <a href="#">History</a>
+                  <a
+                    className="transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
+                    History
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Our Team</a>
+                  <a
+                    className="transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
+                    Our Team
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Blog</a>
+                  <a
+                    className="transition duration-300 ease-in-out hover:text-almostBlack"
+                    href="#"
+                  >
+                    Blog
+                  </a>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a href="#">Careers</a>
+            <a
+              className="transition duration-300 ease-in-out hover:text-almostBlack"
+              href="#"
+            >
+              Careers
+            </a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a
+              className="transition duration-300 ease-in-out hover:text-almostBlack"
+              href="#"
+            >
+              About
+            </a>
           </li>
         </ul>
-        <div className="flex flex-col gap-2">
-          <button>Login</button>
-          <button className="rounded-xl p-1 outline outline-1 outline-almostBlack">
+        <div className="flex flex-col gap-4">
+          <button className="transition duration-300 ease-in-out hover:text-almostBlack">
+            Login
+          </button>
+          <button className="transform rounded-xl p-2 outline outline-1 outline-almostBlack transition duration-300 ease-in-out hover:bg-almostBlack hover:text-almostWhite">
             Register
           </button>
         </div>

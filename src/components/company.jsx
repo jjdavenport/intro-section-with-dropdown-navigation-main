@@ -4,17 +4,32 @@ const Company = ({ leave, enter }) => {
       <dialog
         onMouseEnter={enter}
         onMouseLeave={leave}
-        className="absolute left-40 m-0 flex"
+        className="absolute left-64 top-16 m-0 flex rounded-lg p-4 text-mediumGray shadow-2xl"
       >
-        <ul>
+        <ul className="flex flex-col gap-2">
           <li>
-            <a href="#">History</a>
+            <a
+              className="transition duration-300 ease-in-out hover:text-almostBlack"
+              href="#"
+            >
+              History
+            </a>
           </li>
           <li>
-            <a href="#">Our Team</a>
+            <a
+              className="transition duration-300 ease-in-out hover:text-almostBlack"
+              href="#"
+            >
+              Our Team
+            </a>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <a
+              className="transition duration-300 ease-in-out hover:text-almostBlack"
+              href="#"
+            >
+              Blog
+            </a>
           </li>
         </ul>
       </dialog>

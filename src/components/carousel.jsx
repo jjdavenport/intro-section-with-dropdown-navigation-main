@@ -21,7 +21,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container md:p-4">
       <Slider {...settings}>
         <div className="px-4">
           <img src={data} alt="Databiz" />
