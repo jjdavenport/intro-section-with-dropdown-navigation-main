@@ -1,7 +1,7 @@
 const Hero = ({ hero }) => {
   return (
     <>
-      <img className="md:w-1/2" src={hero} />
+      <img src={hero} />
     </>
   );
 };

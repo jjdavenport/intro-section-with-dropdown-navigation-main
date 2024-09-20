@@ -8,26 +8,27 @@ import Carousel from "./components/carousel";
 import Footer from "./components/footer";
 
 function App() {
-  const desktop = useMediaQuery({ minWidth: 768 });
+  const desktop = useMediaQuery({ minWidth: 1024 });
+  const tablet = useMediaQuery({ minWidth: 768 });
   return (
     <>
       {desktop ? (
-        <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom font-medium text-mediumGray">
+        <div className="flex min-h-screen flex-col bg-almostWhite font-custom font-medium text-mediumGray">
           <div className="relative flex flex-1 flex-col text-lg">
-            <Nav desktop={desktop} />
-            <main className="flex h-full flex-row-reverse p-4">
-              <Hero hero={desktopHero} />
-              <section className="flex w-1/2 flex-col justify-between">
+            <Nav tablet={tablet} />
+            <main className="grid grid-cols-2 grid-rows-none gap-10 px-32">
+              <section className="flex flex-col">
                 <Content />
                 <Carousel />
               </section>
+              <Hero hero={desktopHero} />
             </main>
           </div>
           <Footer />
         </div>
       ) : (
         <div className="flex h-full min-h-screen flex-col bg-almostWhite font-custom text-lg font-medium text-mediumGray">
-          <Nav desktop={desktop} />
+          <Nav tablet={tablet} />
           <main className="flex flex-1 flex-col justify-evenly">
             <Hero hero={mobileHero} />
             <Content />

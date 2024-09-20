@@ -11,7 +11,7 @@ import planning from "./assets/icon-planning.svg";
 import arrowUp from "./assets/icon-arrow-up.svg";
 import arrowDown from "./assets/icon-arrow-down.svg";
 
-const Nav = ({ desktop }) => {
+const Nav = ({ tablet }) => {
   const [menu, setMenu] = useState(false);
   const [features, setFeatures] = useState(false);
   const [company, setCompany] = useState(false);
@@ -33,16 +33,16 @@ const Nav = ({ desktop }) => {
 
   return (
     <>
-      {desktop ? (
+      {tablet ? (
         <>
           <nav className="flex items-center justify-between p-6">
-            <div className="flex gap-8">
+            <div className="flex md:gap-4 lg:gap-8">
               <img className="object-contain" src={logo} alt="Logo" />
-              <ul className="flex gap-8">
+              <ul className="flex md:gap-4 lg:gap-8">
                 <li>
                   <a
                     href="#"
-                    className={`flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack ${features ? "text-almostBlack" : "text-mediumGray"}`}
+                    className={`flex gap-1 transition duration-300 ease-in-out hover:text-almostBlack ${features ? "text-almostBlack" : "text-mediumGray"}`}
                     onMouseEnter={() => timeOutEnter(setFeatures, featuresRef)}
                     onMouseLeave={() => timeOutLeave(setFeatures, featuresRef)}
                   >
@@ -56,7 +56,7 @@ const Nav = ({ desktop }) => {
                 <li>
                   <a
                     href="#"
-                    className={`flex gap-2 transition duration-300 ease-in-out hover:text-almostBlack ${company ? "text-almostBlack" : "text-mediumGray"}`}
+                    className={`flex gap-1 transition duration-300 ease-in-out hover:text-almostBlack ${company ? "text-almostBlack" : "text-mediumGray"}`}
                     onMouseEnter={() => timeOutEnter(setCompany, companyRef)}
                     onMouseLeave={() => timeOutLeave(setCompany, companyRef)}
                   >
@@ -85,7 +85,7 @@ const Nav = ({ desktop }) => {
                 </li>
               </ul>
             </div>
-            <div className="flex gap-8">
+            <div className="flex md:gap-4 lg:gap-8">
               <button className="transition duration-300 ease-in-out hover:text-almostBlack">
                 Login
               </button>

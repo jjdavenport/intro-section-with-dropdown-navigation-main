@@ -1,7 +1,7 @@
 const Content = () => {
   return (
     <>
-      <article className="flex flex-col items-center gap-4 p-4 py-6 text-center md:items-start md:text-left">
+      <article className="flex flex-1 flex-col items-center gap-4 p-4 py-6 text-center lg:items-start lg:justify-center lg:gap-8 lg:text-left">
         <h1 className="text-3xl font-bold text-almostBlack md:text-7xl">
           Make remote work
         </h1>
