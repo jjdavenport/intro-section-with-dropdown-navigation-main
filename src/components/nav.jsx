@@ -35,7 +35,7 @@ const Nav = ({ tablet }) => {
     <>
       {tablet ? (
         <>
-          <nav className="flex items-center justify-between p-6">
+          <nav className="flex items-center justify-between p-8">
             <div className="flex md:gap-4 lg:gap-8">
               <img className="object-contain" src={logo} alt="Logo" />
               <ul className="flex md:gap-4 lg:gap-8">
@@ -89,7 +89,7 @@ const Nav = ({ tablet }) => {
               <button className="transition duration-300 ease-in-out hover:text-almostBlack">
                 Login
               </button>
-              <button className="rounded-lg px-4 py-1 outline outline-mediumGray transition duration-300 ease-in-out hover:text-almostBlack hover:outline-almostBlack">
+              <button className="rounded-lg px-4 py-1 outline outline-1 outline-mediumGray transition duration-300 ease-in-out hover:text-almostBlack hover:outline-almostBlack">
                 Register
               </button>
             </div>
