@@ -1,7 +1,7 @@
 const Hero = ({ hero }) => {
   return (
     <>
-      <img src={hero} />
+      <img className="max-h-[900px]" src={hero} />
     </>
   );
 };

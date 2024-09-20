@@ -17,7 +17,7 @@ function App() {
           <div className="relative flex flex-1 flex-col text-lg">
             <Nav tablet={tablet} />
             <div className="flex flex-1 items-center">
-              <main className="grid h-min grid-cols-2 grid-rows-none gap-10 lg:px-32 lg:py-10">
+              <main className="grid h-min grid-cols-2 grid-rows-none gap-32 lg:px-32">
                 <section className="flex flex-col">
                   <Content />
                   <Carousel />
