@@ -4,7 +4,7 @@ const Features = ({ todo, calendar, reminders, planning, enter, leave }) => {
       <dialog
         onMouseEnter={enter}
         onMouseLeave={leave}
-        className="absolute left-24 top-16 m-0 flex rounded-lg p-4 text-mediumGray shadow-2xl"
+        className="absolute m-0 flex rounded-lg p-4 text-mediumGray shadow-2xl md:left-20 md:top-16 lg:left-24"
       >
         <ul className="flex flex-col gap-2">
           <li>

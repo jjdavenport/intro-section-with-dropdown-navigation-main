@@ -4,7 +4,7 @@ const Company = ({ leave, enter }) => {
       <dialog
         onMouseEnter={enter}
         onMouseLeave={leave}
-        className="absolute left-64 top-16 m-0 flex rounded-lg p-4 text-mediumGray shadow-2xl"
+        className="absolute left-60 top-16 m-0 flex rounded-lg p-4 text-mediumGray shadow-2xl lg:left-64"
       >
         <ul className="flex flex-col gap-2">
           <li>

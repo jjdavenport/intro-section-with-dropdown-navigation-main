@@ -16,13 +16,15 @@ function App() {
         <div className="flex min-h-screen flex-col bg-almostWhite font-custom font-medium text-mediumGray">
           <div className="relative flex flex-1 flex-col text-lg">
             <Nav tablet={tablet} />
-            <main className="grid grid-cols-2 grid-rows-none gap-10 px-32">
-              <section className="flex flex-col">
-                <Content />
-                <Carousel />
-              </section>
-              <Hero hero={desktopHero} />
-            </main>
+            <div className="flex flex-1 items-center">
+              <main className="grid h-min grid-cols-2 grid-rows-none gap-10 lg:px-32">
+                <section className="flex flex-col">
+                  <Content />
+                  <Carousel />
+                </section>
+                <Hero hero={desktopHero} />
+              </main>
+            </div>
           </div>
           <Footer />
         </div>
